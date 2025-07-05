@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Anuncios.crearAnuncio">
+
+    <RelativeLayout
+        android:id="@+id/RL_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/agregarImg"
+            android:src="@drawable/agregar_img"
+            android:layout_marginTop="15dp"
+            android:layout_centerInParent="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/RL_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <!--Marca del Producto-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RV_imagenes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/item_imagenes_seleccionadas" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_marca"
+                android:layout_below="@id/RV_imagenes"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/Et_titulo"
+                    android:hint="@string/Et_marca"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Categoria-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Categoria"
+                android:layout_below="@id/TIL_marca"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/Categoria"
+                    android:hint="@string/Categoria"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Ubicacion-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_ubicacion"
+                android:layout_below="@id/TIL_Categoria"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/Ubicacion"
+                    android:hint="Ubicacion"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--Descripcion-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_descrpcion"
+                android:layout_below="@id/TIL_ubicacion"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/Et_descripcion"
+                    android:hint="@string/ET_Descripcion"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Btn_crear_anuncio"
+        android:text="@string/BTN_crear_anuncio"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="true"
+        android:layout_marginTop="10dp"
+        app:cornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
